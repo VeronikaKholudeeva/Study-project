@@ -5,6 +5,76 @@
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/shortstack/v15/bMrzmS2X6p0jZC6EcmPFX-SS.ttf) format('truetype');
 }
+.calculatorMain {
+  width: 250px;
+  margin: 50px;
+  background-color: #dae6f2a5;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 2px 2px inset white, 2px 2px #beccde;
+}
+.calculatorMain .resultWindow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: none;
+  background-color: #FBE6E1;
+  width: 100%;
+  margin: 20px 0;
+  height: 80px;
+  border-radius: 30px;
+  font-family: 'Short Stack';
+  font-size: 20px;
+  box-shadow: 2px 2px #FEF6F4, 2px 2px inset #beccde;
+}
+.calculatorMain .resultWindow p {
+  text-align: right;
+  padding-right: 20px;
+}
+.calculatorMain .resultWindow p:first-child {
+  font-size: 16px;
+}
+.calculatorMain .resultWindow p:last-child {
+  color: #b65757;
+}
+.calculatorMain p {
+  margin: 0;
+  text-align: center;
+  font-size: 20px;
+}
+.calculator {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+}
+.calculator .num {
+  grid-area: 2/1/5/4;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+.btn {
+  font-family: 'Short Stack';
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  margin: 5px 0px;
+  background-color: #FBE6E1;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 1px 1px inset #FEF6F4, 2px 2px #beccde;
+}
+.btn[value="="] {
+  height: 100px;
+  grid-area: 4/4/5/4;
+}
+.btn:active {
+  box-shadow: 1px 1px #FEF6F4, 2px 2px inset #beccde;
+}
+.numbers {
+  grid-column: 1/4;
+}
 body {
   background: linear-gradient(#dae6f2a5, transparent 2px), linear-gradient(90deg, #dae6f2a5, transparent 2px);
   background-size: 30px 30px;

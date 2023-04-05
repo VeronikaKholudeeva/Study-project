@@ -1,0 +1,74 @@
+// main: "../../App.less"
+.calculatorMain{
+    width: 250px;
+    margin: 50px;
+    background-color: @bg-line-color;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 2px 2px inset white, 2px 2px @bg-color;
+    .resultWindow{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: none;
+        background-color: @date-color;
+        width: 100%;
+        margin: 20px 0;
+        height: 80px;
+        border-radius: 30px;
+        font-family: 'Short Stack';
+        font-size: 20px;
+        box-shadow: 2px 2px @main-color, 2px 2px inset @bg-color;
+        p{
+            text-align: right;
+            padding-right: 20px;
+        }
+        & p:first-child{
+            font-size: 16px;
+        }
+        & p:last-child{
+            color:@result-color;
+        }
+    }
+    p{
+        margin: 0;
+        text-align: center;
+        font-size: 20px;
+    }
+    
+}
+.calculator{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    .num{
+        grid-area: 2/1/5/4;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+    }
+}
+.btn{
+    font-family: 'Short Stack';
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    margin: 5px 0px;
+    background-color: @date-color;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 1px 1px inset @main-color, 2px 2px @bg-color;
+    &[value="="]{
+      height: 100px;  
+      grid-area: 4/4/5/4;
+    }
+    &:active{
+        box-shadow: 1px 1px @main-color, 2px 2px inset @bg-color;
+    }
+
+
+}
+.numbers{
+    grid-column: 1/4;
+}

@@ -7,6 +7,7 @@
 }
 .calculatorMain {
   width: 250px;
+  height: fit-content;
   margin: 50px;
   background-color: #dae6f2a5;
   padding: 30px;
@@ -75,50 +76,212 @@
 .numbers {
   grid-column: 1/4;
 }
+.todo {
+  background-color: #dae6f2a5;
+  height: fit-content;
+  padding-bottom: 100px;
+  width: 50%;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border-radius: 20px;
+  margin: 50px;
+  padding-left: 20px;
+  position: relative;
+}
+.todo p {
+  text-align: center;
+  font-size: 20px;
+}
+.todo .todoitem {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: fit-content;
+  margin-right: 20px;
+  padding-right: 20px;
+  border-bottom: 1px #beccde solid;
+}
+.todo .todoitem input:checked + span p {
+  opacity: 1;
+}
+.todo .todoitem input:checked + span + label {
+  text-decoration: line-through;
+}
+.todo .todoitem input {
+  opacity: 0;
+  position: absolute;
+  z-index: 2;
+}
+.todo .todoitem div + div {
+  border-radius: 20px;
+  width: 150px;
+  text-align: center;
+  margin-right: 40px;
+}
+.todo .todoitem div + div[data-value="Highest"] {
+  background-color: rgba(182, 87, 87, 0.6);
+  color: rgba(81, 35, 35, 0.6);
+}
+.todo .todoitem div + div[data-value="High"] {
+  background-color: rgba(213, 127, 49, 0.61176471);
+  color: rgba(90, 53, 19, 0.61176471);
+}
+.todo .todoitem div + div[data-value="Medium"] {
+  background-color: #f2a60d9f;
+  color: rgba(97, 66, 5, 0.62352941);
+}
+.todo .todoitem div + div[data-value="Low"] {
+  background-color: rgba(164, 181, 93, 0.81176471);
+  color: rgba(74, 83, 38, 0.81176471);
+}
+.todo .todoitem div + div[data-value="Lowest"] {
+  background-color: #81bc81;
+  color: #396b39;
+}
+.todo .todoitem div span {
+  height: 20px;
+  width: 20px;
+  border: 1px black solid;
+  border-radius: 50%;
+}
+.todo .todoitem div span p {
+  margin: auto;
+  display: inline;
+  opacity: 0;
+  font-size: 24px;
+}
+.todo .todoitem div label {
+  text-align: left;
+  margin-left: 20px;
+}
+.todo .todoitem div p {
+  font-size: 14px;
+  margin-top: 0;
+  margin-left: 60px;
+  color: rgba(0, 0, 0, 0.652);
+}
+.todo .todoitem button {
+  font-size: 18px;
+  position: absolute;
+  right: 10px;
+  margin: auto;
+  color: #b65757;
+  background-color: rgba(0, 0, 0, 0);
+  height: 30px;
+  box-shadow: none;
+  width: 30px;
+}
+.todo input {
+  margin-right: 15px;
+}
+.todo button {
+  color: #FEF6F4;
+  font-family: 'Short Stack';
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  font-size: 24px;
+  background-color: #81bc81;
+  border: none;
+  box-shadow: 1px 1px inset #FEF6F4, 2px 2px #beccde;
+}
+.todo button[id="add"] {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+h4 {
+  text-align: center;
+}
+.todoform {
+  display: flex;
+  flex-direction: column;
+}
+.todoform label {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+}
+.todoform input,
+.todoform textarea,
+.todoform select {
+  background-color: #fdeeeb;
+  padding: 5px 5px;
+  border: none;
+  border-radius: 10px;
+  width: 50%;
+  font-family: 'Short Stack';
+  font-size: 16px;
+}
+.todoform button {
+  margin: 10px auto;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 20px;
+}
 body {
   background: linear-gradient(#dae6f2a5, transparent 2px), linear-gradient(90deg, #dae6f2a5, transparent 2px);
   background-size: 30px 30px;
   background-position: center center;
   background-color: #beccde;
 }
-.main {
+.App {
   display: flex;
   flex-direction: column;
-  margin: 25px auto;
-  border: black 2px solid;
-  border-radius: 20px;
-  width: 90%;
-  height: 100vh;
-  background-color: #FEF6F4;
+  align-items: center;
+  width: 100%;
   font-family: 'Short Stack';
   font-size: 30px;
 }
-.main header {
+header {
   display: flex;
   flex-direction: row;
   border-radius: 20px 20px 0 0;
-  border-bottom: black 2px solid;
-  width: 100%;
+  border: black 2px solid;
+  width: 90%;
   height: 70px;
   justify-content: space-between;
   background-color: #F9C3C1;
 }
-.main header p {
+header p {
   margin: auto 30px;
 }
-.main header .icons {
+header .icons {
   margin: auto 30px;
   display: flex;
   flex-direction: row;
   width: 150px;
   justify-content: space-between;
 }
-.main header .icons .icon {
+header .icons .icon {
   height: 40px;
 }
-.main .date {
+.date {
   text-align: center;
   background-color: #FBE6E1;
   padding: 20px 0;
-  border-bottom: black 2px solid;
+  width: 90%;
+  border: black 2px solid;
+  border-top: none;
+}
+.main {
+  display: flex;
+  margin: 0 auto;
+  border: black 2px solid;
+  border-top: none;
+  border-radius: 0 0 20px 20px;
+  width: 90%;
+  height: 100vh;
+  background-color: #FEF6F4;
+  font-family: 'Short Stack';
+  font-size: 30px;
 }

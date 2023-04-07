@@ -1,0 +1,140 @@
+// main: "../../App.less"
+
+@high-color : rgba(182, 87, 87, 0.6);
+@medium-color : #f2a60d9f;
+@low-color : rgb(129, 188, 129, 0.6);
+
+.todo {
+    background-color: @bg-line-color;
+    height: fit-content;
+    padding-bottom: 100px;
+    width: 50%;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    border-radius: 20px;
+    margin: 50px;
+    padding-left: 20px;
+    position: relative;
+
+    p {
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .todoitem {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        height: fit-content;
+        margin-right:20px;
+        padding-right: 20px;
+        border-bottom: 1px @bg-color solid;
+
+        input:checked + span{
+            p{
+                opacity:1;
+            }
+            & + label{
+            text-decoration: line-through;
+            }
+        }
+       
+        input{
+            opacity: 0;
+           position: absolute;
+            z-index: 2;
+        }
+        div +div{
+            border-radius: 20px;
+            width: 150px;
+            text-align: center;
+            margin-right: 40px;
+            &[data-value="Highest"]{
+                background-color: @high-color;
+                color: darken(@high-color, 30%);
+            }
+            &[data-value="High"]{
+                background-color: mix(@high-color, @medium-color);
+                
+                color: darken(mix(@high-color, @medium-color), 30%);
+            }
+            &[data-value="Medium"]{
+                background-color: @medium-color;
+                color: darken(@medium-color, 30%);
+            }
+            &[data-value="Low"]{
+                background-color: mix(@medium-color, @low-color);
+                color: darken(mix(@medium-color, @low-color),30%);
+            }
+            &[data-value="Lowest"]{
+                background-color: @low-color;
+                color: darken(@low-color, 30%);
+            }
+        }
+        div{
+            span{
+                height: 20px;
+                width: 20px;
+                border: 1px black solid;
+                border-radius: 50%;
+                p{
+                    margin: auto;
+                    display: inline;
+                    opacity:0;
+                    font-size: 24px;
+                }
+            }
+            label{
+                text-align: left;
+                margin-left: 20px;
+            }
+            p{
+                font-size: 14px;
+                margin-top: 0;
+                margin-left: 60px; 
+                color: rgba(0, 0, 0, 0.652);
+            }
+        }
+        
+
+        button {
+            font-size: 18px;
+            position: absolute;
+            right: 10px;
+            margin: auto;
+            color: @result-color;
+            background-color: rgba(0, 0, 0, 0);
+            height: 30px;
+            box-shadow: none;
+            width: 30px;
+        }
+        
+
+        
+    }
+    input{
+        margin-right: 15px;
+    }
+
+    button {
+        color: @main-color;
+        font-family: 'Short Stack';
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        font-size: 24px;
+        background-color: rgb(129, 188, 129);
+        border: none;
+        box-shadow: 1px 1px inset @main-color, 2px 2px @bg-color;
+
+        &[id="add"] {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+    }
+}

@@ -1,3 +1,26 @@
+<h1 align="center"> Study project </h1>
+<div align="center">
+
+  ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+  ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+  ![Less](https://img.shields.io/badge/less-2B4C80?style=for-the-badge&logo=less&logoColor=white)
+
+</div>
+<p > A page with small widgets for training new skills. Page is in progress, now there is:
+  <ul>
+    <li> Today's date</li>
+    <li> Calculator</li>
+    <li> To-do list</li>
+    <li> Rock-paper-scissors</li>
+    </ul>
+</p>
+
+<div align="center">
+  <img src="./study_project.png" width="90%"/>
+  <img src="./todo_form.png" width="90%"/>
+</div>
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
